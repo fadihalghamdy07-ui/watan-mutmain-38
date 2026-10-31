@@ -1,0 +1,21 @@
+وطن مطمئن | المتوسطة الثامنة والثلاثون
+
+ملف الموقع: index.html
+
+للرفع في نفس مشروع GitHub:
+1- افتحي https://github.com/fadihalghamdy07-ui/watan-mutmain-38/upload/main في Safari بعد تسجيل الدخول.
+2- اختاري ملف index.html من تطبيق الملفات.
+3- إذا قال GitHub إن الملف موجود مسبقًا، اختاري استبداله/تحديثه، وليس إضافة نسخة باسم آخر.
+4- اضغطي Commit changes.
+5- افتحي https://fadihalghamdy07-ui.github.io/watan-mutmain-38/ ثم حدثي الصفحة.
+
+المشاركات الجديدة تُحفظ لدى Supabase بحالة approved=false (قيد الاعتماد).
+للمراجعة: ادخلي لوحة مشروع Supabase > Table Editor > public.watan_responses، ثم افتحي الاستجابة المناسبة، واقرئي المحتوى وتأكدي من عدم احتوائه على بيانات شخصية أو إساءة.
+للاعتماد: غيّري الحقل approved من false إلى true ثم احفظي. ستظهر المشاركة للعموم بعد تحديث جدار الاستجابات.
+لرفض مشاركة: اتركي approved=false أو احذفي السجل من لوحة الإدارة.
+
+مهم: لا تضعي كلمات مرور Supabase أو secret / service_role في صفحة الموقع أو في المحادثة. مفتاح sb_publishable وحده عام، لكن الحماية الفعلية تعتمد على سياسات RLS.
+هذه النسخة لا تطلب أسماء أو صور الطالبات ولا ملفات مرفقة ضمن المشاركات العامة.
+GitHub Pages لا يقدم نظام دخول إداري أو تخزين استجابات؛ الإدارة تتم من Supabase.
+
+إذا ظهر خطأ في إرسال الاستجابة: تأكدي من أن كود SQL لإنشاء public.watan_responses وسياسات Read approved responses وSubmit pending responses نُفّذ بنجاح، وأن Data API مفعّل.

@@ -13,6 +13,17 @@ body.gate-locked{overflow:hidden}body.gate-locked>.top,body.gate-locked>main,bod
 
 /* مشاركة مجتمع المدرسة */
 .participation-section{background:linear-gradient(145deg,#f8f4e7,#e4eee3);color:#16493e}.participation-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}.participation-panel{background:#fffdf6;border:1px solid #cfaf6f;border-radius:24px;padding:clamp(18px,4vw,30px);box-shadow:0 12px 35px #123d3421}.participation-panel h3{color:#145142;margin-top:0}.role-options{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:12px 0 20px}.role-option{border:1px solid #c6dacf;border-radius:15px;background:#eef5ed;color:#145142;padding:14px 5px;font-weight:800}.role-option.active{background:#0c5a49;border-color:#c9ac69;color:#fff4d5;box-shadow:0 5px 15px #063b332e}.participation-panel label{font-weight:800;display:block;margin-top:12px;margin-bottom:5px}.participation-panel .field{width:100%;background:#fff;color:#16493e}.participation-panel textarea{resize:vertical}.participation-note{background:#e8f1e7;color:#235043;border-radius:12px;padding:10px 13px;font-size:13px;line-height:1.9}.participation-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.participation-guide{background:linear-gradient(155deg,#063c34,#105948);color:#fff9e5;border-radius:24px;padding:25px;border:1px solid #d6b678}.participation-guide h3{color:#f3d597}.participation-guide li{padding:8px 0;line-height:1.9}.participation-count{font-size:34px;font-weight:900;color:#f4da9a}.saved-entry{border:1px solid #ccdbce;border-radius:13px;padding:12px;margin:9px 0;background:#f6faf5;white-space:pre-wrap;overflow-wrap:anywhere}.saved-entry small{color:#396d5d}.participation-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}.participation-actions button{border-radius:12px;padding:9px 14px;border:1px solid #bfa66e;background:#eaf1e7;color:#17493f;font-weight:800}.participation-actions button:hover{background:#d7ead8}.file-help{font-size:12px;color:#526b5c}.participation-success{color:#006d48;font-weight:800;min-height:1.5em}.privacy-label{font-weight:700;color:#214f41}@media(max-width:800px){.participation-wrap{grid-template-columns:1fr}}@media(max-width:520px){.role-options{grid-template-columns:repeat(2,1fr)}.participation-grid{grid-template-columns:1fr}}
+
+/* جدار الاستجابات المشتركة */
+.public-wall{margin-top:26px;border:1px solid #d2b679;border-radius:26px;padding:clamp(20px,3vw,34px);background:linear-gradient(145deg,#fffdf7,#f1f6ee);box-shadow:0 18px 48px #193e3222;color:#173f36}
+.wall-head{display:flex;gap:14px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.wall-head h3{font-size:clamp(23px,3.2vw,32px);color:#075445;margin:0}.wall-head p{margin:5px 0 15px;color:#536d61}.wall-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.wall-tools label{font-weight:800}.wall-tools select{min-width:210px;color:#12483c;background:white}
+.wall-status{background:#e8eee6;color:#2d5c4d;border-radius:14px;padding:13px 15px;font-weight:700;line-height:1.9}
+.wall-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:14px;margin-top:18px}
+.wall-card{border:1px solid #d6c38d;border-radius:20px;background:#fff;padding:20px;box-shadow:0 8px 23px #123d2c12;overflow-wrap:anywhere}
+.wall-card .wall-role{display:inline-block;color:#065846;background:#e5f1e9;padding:4px 12px;border-radius:100px;font-weight:800;font-size:13px}
+.wall-card h4{font-size:17px;color:#0c5145;margin:12px 0}.wall-card .wall-message{line-height:2;white-space:pre-wrap;margin:8px 0;color:#174139}.wall-card small{color:#667f73}
+@media(max-width:550px){.public-wall{margin-left:0;margin-right:0}.wall-head{align-items:stretch}.wall-tools{width:100%}.wall-tools select{width:100%}}
 </style></head><body class="gate-locked"><div id="entryGate" role="dialog" aria-modal="true" aria-labelledby="gateTitle"><div class="gate-card">
 <div class="gate-org">🇸🇦 إدارة تعليم تبوك — المتوسطة الثامنة والثلاثون</div><div style="font-size:42px">🇸🇦</div><h1 id="gateTitle">وطن مطمئن</h1><div class="gate-phrase">وعي يحمي، وانتماء يبني</div><p>أهلاً بكِ في منصة وطن مطمئن التفاعلية</p>
 <div id="gateStep1"><p style="margin-bottom:6px">اضغطي على البصمة لبدء النشيد الوطني السعودي</p><button id="gateFinger" class="fingerprint-button" aria-label="اضغطي البصمة لتشغيل النشيد الوطني">◉</button><strong>بصمة وطن مطمئن</strong></div>
@@ -31,7 +42,15 @@ body.gate-locked{overflow:hidden}body.gate-locked>.top,body.gate-locked>main,bod
 <section class="section" id="stations"><div class="shell"><div class="section-head"><h2 style="color:#eed49b">محطات المبادرة</h2><p>رحلة من الوعي إلى الأثر | اختاري محطة للمشاركة</p></div><div class="stations" id="stationGrid"></div><p style="text-align:center" class="muted">تُحفظ مشاركاتك على هذا الجهاز فقط، ولا تُرسل إلى المدرسة.</p></div></section>
 <section class="section light" id="plan"><div class="shell"><div class="section-head"><h2>الخطة الزمنية والفعاليات</h2><p>ست فعاليات وطنية تربط الوعي بالسلوك الإيجابي والأثر المجتمعي</p></div><p class="plan-intro">تضم هذه الخطة آلية تنفيذ كل فعالية والناتج المتوقع منها، وفق النموذج المرفق. اضغطي «شاركي في الفعالية» لفتح النشاط التفاعلي.</p><div class="plan-grid" id="planGrid"></div></div></section>
 
-<section class="section participation-section" id="participation"><div class="shell"><div class="section-head"><h2>🇸🇦 شارك في وطن مطمئن</h2><p>مساحة واحدة تجمع الطالبات وأولياء الأمور والمعلمات والإداريات في محطات المبادرة الست</p></div><div class="participation-wrap"><div class="participation-panel"><h3>✦ سجّل مشاركتك في الفعالية</h3><form id="communityForm"><label>صفة المشارك</label><div class="role-options" role="group" aria-label="اختيار صفة المشارك"><button type="button" class="role-option active" data-role="طالبة" aria-pressed="true">🎓 طالبة</button><button type="button" class="role-option" data-role="ولي أمر" aria-pressed="false">👪 ولي أمر</button><button type="button" class="role-option" data-role="معلمة" aria-pressed="false">📚 معلمة</button><button type="button" class="role-option" data-role="إدارية" aria-pressed="false">🏫 إدارية</button></div><div class="participation-grid"><div><label for="communityName">الاسم أو اللقب (اختياري)</label><input class="field" id="communityName" maxlength="60" placeholder="اسم أول أو لقب"></div><div><label for="communityActivity">اختيار الفعالية</label><select class="field" id="communityActivity" required><option value="">اختاري الفعالية</option><option>سفيرات الطمأنينة</option><option>رسالة اطمئنان</option><option>مختبر الوعي الرقمي</option><option>مجلس وطن مطمئن</option><option>الطمأنينة فعل</option><option>نبض الطمأنينة المجتمعي</option></select></div></div><label for="communityType">نوع المشاركة</label><select class="field" id="communityType"><option>فكرة أو مقترح</option><option>رسالة وطنية</option><option>مبادرة تطوعية</option><option>تجربة أو إنجاز</option><option>سؤال أو استفسار</option><option>ملاحظة أو تقييم</option></select><label for="communityMessage">تفاصيل المشاركة</label><textarea class="field" id="communityMessage" maxlength="1600" rows="5" minlength="8" required placeholder="اكتب/اكتبي مشاركتك أو مقترحك هنا..."></textarea><label for="communityFile">إرفاق ملف اختياري</label><input class="field" id="communityFile" type="file" accept="image/*,.pdf,.txt,.doc,.docx"><p class="file-help">الحد الأقصى ١ ميغابايت. يُرفق الملف مع نسخة JSON التي يمكن تنزيلها، ولا يتم رفعه إلى المدرسة.</p><p class="participation-note">🔒 هذه نسخة تجريبية بلا خادم: تحفظ المشاركات على جهازك فقط. لإيصالها إلى المدرسة، نزّلي سجل المشاركات وشاركيه عبر قناة المدرسة الرسمية. يُفضّل عدم إدخال أرقام هوية أو هواتف أو بيانات خاصة.</p><button class="btn primary" type="submit">✨ حفظ المشاركة على هذا الجهاز</button><p id="communityStatus" class="participation-success" role="status" aria-live="polite"></p></form><div class="participation-actions"><button type="button" id="exportCommunity">⬇ تنزيل سجل المشاركات (JSON مع المرفقات)</button><button type="button" id="clearCommunity">مسح المشاركات من هذا الجهاز</button></div></div><aside class="participation-guide"><div style="font-size:40px">🤝</div><h3>لكل فرد بصمة تصنع الأثر</h3><p>اختَر صفتك وفعالية المبادرة، ثم شارك بفكرة أو رسالة أو عمل تطوعي.</p><ul><li>🎓 <b>الطالبة:</b> رسالة أو نشاط أو مبادرة سلوكية إيجابية.</li><li>👪 <b>ولي الأمر:</b> اقتراح أو رسالة دعم أو مشاركة مجتمعية.</li><li>📚 <b>المعلمة:</b> محتوى توعوي أو خطة نشاط أو إثراء.</li><li>🏫 <b>الإدارية:</b> تنظيم الفعالية أو متابعة الأثر أو تطويرها.</li></ul><div class="participation-count" id="participationCount">٠</div><p style="margin-top:0">مشاركات محفوظة على هذا الجهاز</p><div id="communityEntries" aria-live="polite"></div></aside></div></div></section>
+<section class="section participation-section" id="participation"><div class="shell"><div class="section-head"><h2>🇸🇦 شارك في وطن مطمئن</h2><p>مساحة تفاعلية للاستجابات من الطالبات وأولياء الأمور والمعلمات والإداريات — تُنشر المشاركات المعتمدة للجميع</p></div><div class="participation-wrap"><div class="participation-panel"><h3>✦ أرسل استجابتك إلى جدار المشاركات</h3><form id="communityForm"><label>صفة المشارك</label><div class="role-options" role="group" aria-label="اختيار صفة المشارك"><button type="button" class="role-option active" data-role="طالبة" aria-pressed="true">🎓 طالبة</button><button type="button" class="role-option" data-role="ولي أمر" aria-pressed="false">👪 ولي أمر</button><button type="button" class="role-option" data-role="معلمة" aria-pressed="false">📚 معلمة</button><button type="button" class="role-option" data-role="إدارية" aria-pressed="false">🏫 إدارية</button></div><div class="participation-grid"><div><label for="communityActivity">اختيار الفعالية</label><select class="field" id="communityActivity" required><option value="">اختاري الفعالية</option><option>سفيرات الطمأنينة</option><option>رسالة اطمئنان</option><option>مختبر الوعي الرقمي</option><option>مجلس وطن مطمئن</option><option>الطمأنينة فعل</option><option>نبض الطمأنينة المجتمعي</option></select></div></div><label for="communityType">نوع المشاركة</label><select class="field" id="communityType"><option>فكرة أو مقترح</option><option>رسالة وطنية</option><option>مبادرة تطوعية</option><option>تجربة أو إنجاز</option><option>سؤال أو استفسار</option><option>ملاحظة أو تقييم</option></select><label for="communityMessage">تفاصيل المشاركة</label><textarea class="field" id="communityMessage" maxlength="1600" rows="5" minlength="8" required placeholder="اكتب/اكتبي مشاركتك أو مقترحك هنا..."></textarea><p class="participation-note">🛡️ حفاظًا على الخصوصية، لا تُطلب أسماء الطالبات أو صورهن أو المرفقات في جدار الاستجابات العام.</p><p class="participation-note">🔒 تُرسل الاستجابات إلى قاعدة بيانات المدرسة للمراجعة، ولا تظهر للجميع إلا بعد اعتمادها من إدارة المبادرة. لا تكتبي الاسم الكامل أو رقم الهاتف أو أي بيانات خاصة.</p><button class="btn primary" type="submit">🇸🇦 إرسال الاستجابة للمراجعة</button><p id="communityStatus" class="participation-success" role="status" aria-live="polite"></p></form><div class="participation-actions"><button type="button" id="refreshPublic">🔄 تحديث الاستجابات المعتمدة</button></div></div></div><aside class="participation-guide"><div style="font-size:40px">🤝</div><h3>لكل فرد بصمة تصنع الأثر</h3><p>اختَر صفتك وفعالية المبادرة، ثم شارك بفكرة أو رسالة أو عمل تطوعي.</p><ul><li>🎓 <b>الطالبة:</b> رسالة أو نشاط أو مبادرة سلوكية إيجابية.</li><li>👪 <b>ولي الأمر:</b> اقتراح أو رسالة دعم أو مشاركة مجتمعية.</li><li>📚 <b>المعلمة:</b> محتوى توعوي أو خطة نشاط أو إثراء.</li><li>🏫 <b>الإدارية:</b> تنظيم الفعالية أو متابعة الأثر أو تطويرها.</li></ul><div class="participation-count" id="participationCount">٠</div><p style="margin-top:0">استجابات منشورة ومعتمدة</p><p class="muted" style="color:#f3dfac;font-size:13px">الصفات يحددها المشاركون بأنفسهم، ولا تعني التحقق من الهوية.</p></aside></div>
+<div class="public-wall" id="publicWall" aria-label="جدار الاستجابات المنشورة">
+  <div class="wall-head"><div><h3>✨ جدار استجابات وطن مطمئن</h3><p>هنا تظهر الرسائل والأفكار المعتمدة ليقرأها الجميع من جميع الأجهزة.</p></div>
+    <div class="wall-tools"><label for="wallActivity">اعرضي فعالية</label><select id="wallActivity" class="field"><option value="">جميع الفعاليات</option><option>سفيرات الطمأنينة</option><option>رسالة اطمئنان</option><option>مختبر الوعي الرقمي</option><option>مجلس وطن مطمئن</option><option>الطمأنينة فعل</option><option>نبض الطمأنينة المجتمعي</option></select></div>
+  </div>
+  <p id="publicWallStatus" class="wall-status" role="status" aria-live="polite">جارٍ تهيئة جدار الاستجابات...</p>
+  <div id="publicWallCards" class="wall-cards"></div>
+</div>
+</div></section>
 <section class="section light" id="fingerprint"><div class="shell"><div class="section-head"><h2>◉ بصمة وطن مطمئن</h2><p>أنتِ جزء من الحكاية، ومساهمتك تصنع الأثر</p></div><div class="stamp-wrap"><div class="card"><h3>ضعي بصمتك الإيجابية</h3><label for="studentName">اسم المشاركة (اختياري — يكفي الاسم الأول أو اسم مستعار)</label><input id="studentName" maxlength="45" class="field" placeholder="اسم أو لقب"><label for="pledge">كيف تساهمين في وطن مطمئن؟</label><textarea id="pledge" class="field" rows="4" maxlength="240" placeholder="أتعهد أن أتحقق من الأخبار قبل نشرها، وأن أكون مصدر طمأنينة... "></textarea><button class="btn primary" onclick="savePledge()">✨ سجّلي بصمتك</button><p class="muted">لا تدخلي بيانات شخصية حساسة. المشاركات لا تُرفع إلى خادم.</p></div><div class="card" style="text-align:center"><div class="finger">◉</div><h3>بصمتي في وطن مطمئن</h3><div class="result" id="pledgeResult">بصمتك الوطنية تبدأ بكلمة مسؤولة وعمل جميل.</div><button class="btn primary" style="margin-top:16px" onclick="printPledge()">طباعة البصمة</button></div></div></div></section>
 <section class="section" id="impact"><div class="shell"><div class="section-head"><h2 style="color:#eed49b">نبض الطمأنينة</h2><p>مراجعة ذاتية بسيطة قبل المشاركة وبعدها</p></div><div class="features"><div class="card"><h3>💬 عبّري عن رأيك بثقة</h3><p>ما السلوك الذي يزيد الطمأنينة في المدرسة؟</p><button class="btn primary" onclick="openStation(4)">شاركي بفكرة</button></div><div class="card"><h3>🌱 بادري واتركي أثرًا</h3><p>اختاري عملًا إيجابيًا تنفذينه اليوم.</p><button class="btn primary" onclick="openStation(5)">فكرة تطوعية</button></div><div class="card"><h3>📊 قياس الأثر</h3><p>استبانة توعوية قصيرة مع مقارنة إجاباتك.</p><button class="btn primary" onclick="openStation(6)">ابدئي الاستبانة</button></div></div><div class="card" style="margin-top:20px"><div class="flex"><strong>إنجازاتي على هذا الجهاز</strong><span class="badge" id="countBadge">٠ من ٦</span></div><div class="progress" style="margin-top:10px"><div id="progressBar"></div></div></div></div></section>
 <section class="section light" id="anthem"><div class="shell"><div class="card anthem"><div><h2>🇸🇦 النشيد الوطني السعودي</h2><p>وقفة اعتزاز بالوطن والراية، مع النشيد الوطني.</p><p class="muted">لتشغيل النشيد، اختاري ملفه الصوتي المصرّح باستخدامه من جهازك. لن يُرفع الملف إلى الإنترنت.</p><label for="audioFile" class="btn primary" style="display:inline-block">♫ اختيار ملف النشيد</label><input class="visually" id="audioFile" type="file" accept="audio/*"><audio id="anthemAudio" controls style="display:none;max-width:100%;margin-top:15px"></audio></div><div class="icon">🇸🇦</div></div></div></section></main>
@@ -142,18 +161,82 @@ function submitSimple(n){let el=document.querySelector('.choice.selected');if(!e
   });
 })();
 
-/* تسجيل مشاركات المجتمع محليًا دون رفع أي بيانات */
+/* جدار استجابات علني مع اعتماد مسبق: Supabase public RLS */
 (function(){
- const form=document.getElementById('communityForm'),roleButtons=[...document.querySelectorAll('.role-option')],status=document.getElementById('communityStatus');let currentRole='طالبة';
- const key='w38_community_submissions_v1';
- const load=()=>{try{return JSON.parse(localStorage.getItem(key)||'[]')}catch{return []}};
- function safe(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
- function draw(){const entries=load();document.getElementById('participationCount').textContent=entries.length.toLocaleString('ar-SA');document.getElementById('communityEntries').innerHTML=entries.length?'<h4>آخر المشاركات على هذا الجهاز</h4>'+entries.slice(-3).reverse().map(e=>'<div class="saved-entry"><b>'+safe(e.role)+' • '+safe(e.activity)+'</b><small> — '+safe(e.name||'مشارك دون اسم')+'</small><p>'+safe(e.message.slice(0,160))+(e.message.length>160?'…':'')+'</p>'+(e.file?'<small>📎 '+safe(e.file.name)+'</small>':'')+'</div>').join(''):'<p>لم تُحفظ مشاركات بعد.</p>'}
- roleButtons.forEach(b=>b.addEventListener('click',()=>{currentRole=b.dataset.role;roleButtons.forEach(x=>{const yes=x===b;x.classList.toggle('active',yes);x.setAttribute('aria-pressed',String(yes))})}));
- function readFile(file){return new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(r.result);r.onerror=()=>reject(new Error('تعذّر قراءة المرفق'));r.readAsDataURL(file)})}
- form.addEventListener('submit',async e=>{e.preventDefault();const activity=document.getElementById('communityActivity').value,message=document.getElementById('communityMessage').value.trim(),file=document.getElementById('communityFile').files[0];if(!activity||message.length<8){status.textContent='اختاري الفعالية واكتبي مشاركة لا تقل عن ٨ أحرف.';return}if(file&&file.size>1024*1024){status.textContent='المرفق أكبر من ١ ميغابايت. اختاري ملفًا أصغر.';return}let attachment=null;try{if(file)attachment={name:file.name,type:file.type,data:await readFile(file)};const entries=load();entries.push({id:Date.now(),date:new Date().toISOString(),role:currentRole,name:document.getElementById('communityName').value.trim(),activity,type:document.getElementById('communityType').value,message,file:attachment});localStorage.setItem(key,JSON.stringify(entries));status.textContent='تم حفظ مشاركتك على هذا الجهاز ✓ يمكنك تنزيل السجل ومشاركته مع المدرسة.';form.reset();draw()}catch(err){status.textContent='تعذّر الحفظ، قد تكون مساحة التخزين ممتلئة. جربي دون مرفق.'}});
- document.getElementById('exportCommunity').addEventListener('click',()=>{const entries=load();if(!entries.length){status.textContent='لا توجد مشاركات محفوظة للتنزيل.';return}const blob=new Blob([JSON.stringify({initiative:'وطن مطمئن',school:'المتوسطة الثامنة والثلاثون',notice:'مشاركات محلية غير مرسلة إلى المدرسة',entries},null,2)],{type:'application/json;charset=utf-8'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='مشاركات_وطن_مطمئن.json';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),2000)});
- document.getElementById('clearCommunity').addEventListener('click',()=>{if(confirm('هل تريدين حذف جميع المشاركات المحلية من هذا الجهاز؟')){localStorage.removeItem(key);status.textContent='تم حذف المشاركات المحلية.';draw()}});
- draw();
+  // تُعبّأ هذه القيم من إعدادات مشروع Supabase. لا تضع مفاتيح service_role/secret هنا أبدًا.
+  const DB_URL = 'https://ddlkaqpbogrolwuvntbb.supabase.co';
+  const PUBLIC_KEY = 'sb_publishable_FVo2S3pdcg8gZRnY1WJkJg_LSi3G0mD';
+  const configured = /^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(DB_URL) &&
+     PUBLIC_KEY.length>35 && !PUBLIC_KEY.startsWith('PASTE_');
+  const form=document.getElementById('communityForm');
+  const status=document.getElementById('communityStatus');
+  const count=document.getElementById('participationCount');
+  const wall=document.getElementById('publicWallCards');
+  const wallStatus=document.getElementById('publicWallStatus');
+  const activityFilter=document.getElementById('wallActivity');
+  const refreshBtn=document.getElementById('refreshPublic');
+  const submitBtn=form.querySelector('button[type="submit"]');
+  const roleButtons=[...document.querySelectorAll('.role-option')];
+  let currentRole='طالبة',records=[];
+  function hdr(){let h={'apikey':PUBLIC_KEY,'Content-Type':'application/json'};
+     if(!PUBLIC_KEY.startsWith('sb_publishable_')) h['Authorization']='Bearer '+PUBLIC_KEY;
+     return h;
+  }
+  const safe=String;
+  function text(tag,val,cl=''){const el=document.createElement(tag);el.textContent=safe(val);if(cl)el.className=cl;return el;}
+  function draw(){
+    const sel=activityFilter.value;
+    const chosen=records.filter(r=>!sel || r.activity===sel);
+    wall.replaceChildren();
+    count.textContent=records.length.toLocaleString('ar-SA');
+    if(!chosen.length){wallStatus.textContent=records.length?'لا توجد استجابات معتمدة لهذه الفعالية بعد.':'لا توجد استجابات منشورة بعد. تظهر المشاركات هنا بعد اعتمادها من إدارة المبادرة.';return;}
+    wallStatus.textContent='🌟 '+chosen.length.toLocaleString('ar-SA')+' استجابة معتمدة — يمكن للجميع الاطلاع عليها.';
+    for(const r of chosen){
+      const card=document.createElement('article');card.className='wall-card';
+      card.append(text('span','مشارك بصفة: '+r.role,'wall-role'));
+      card.append(text('h4',r.activity));
+      card.append(text('small',r.category+' • '+new Date(r.created_at).toLocaleDateString('ar-SA')));
+      card.append(text('p',r.message,'wall-message'));
+      wall.append(card);
+    }
+  }
+  async function loadPublic(){
+    if(!configured){wallStatus.textContent='جدار الاستجابات جاهز للتصميم، ولم يُفعّل الربط بقاعدة البيانات بعد. لن تُرسَل أو تُعرض مشاركات عامة حتى إكمال الربط.';count.textContent='—';return;}
+    wallStatus.textContent='جارٍ تحميل الاستجابات المعتمدة...';
+    try{
+      const res=await fetch(DB_URL+'/rest/v1/watan_responses?select=id,created_at,role,activity,category,message&approved=eq.true&order=created_at.desc&limit=120',{headers:hdr(),cache:'no-store'});
+      if(!res.ok)throw Error('HTTP '+res.status+' while fetching approved responses');
+      records=await res.json();if(!Array.isArray(records))throw Error('تعذّر قراءة الاستجابات');draw();
+    }catch(e){wallStatus.textContent='تعذّر تحميل الاستجابات. تحققي من اتصال الإنترنت، ثم اضغطي تحديث. إذا استمرت المشكلة، راجعي إعدادات Supabase.';console.error(e);}
+  }
+  roleButtons.forEach(b=>b.addEventListener('click',()=>{
+    currentRole=b.dataset.role;
+    roleButtons.forEach(x=>{const on=x===b;x.classList.toggle('active',on);x.setAttribute('aria-pressed',String(on))});
+  }));
+  form.addEventListener('submit',async function(ev){
+    ev.preventDefault();
+    if(!configured){status.textContent='تعذّر إعداد الاتصال بقاعدة البيانات؛ راجعي إعدادات الربط.';return;}
+    const activity=document.getElementById('communityActivity').value;
+    const category=document.getElementById('communityType').value;
+    const message=document.getElementById('communityMessage').value.trim();
+    if(!activity || message.length<8 || message.length>1600){status.textContent='اختاري الفعالية واكتبي مشاركة بين ٨ و١٦٠٠ حرف.';return;}
+    // منع إعادة الإرسال المتكرر من الجهاز (حماية إضافية بسيطة؛ ليست بديلًا عن الحماية بالخادم).
+    let previous=0;try{previous=Number(localStorage.getItem('w38_last_sent')||0)}catch(e){}
+    if(Date.now()-previous<60000){status.textContent='لتجنب الإرسال المتكرر، حاولي بعد مرور دقيقة على مشاركتك السابقة.';return;}
+    submitBtn.disabled=true;status.textContent='جارٍ إرسال الاستجابة للمراجعة...';
+    try{
+      const res=await fetch(DB_URL+'/rest/v1/watan_responses',{method:'POST',headers:{...hdr(),'Prefer':'return=minimal'},body:JSON.stringify({role:currentRole,activity,category,message,approved:false})});
+      if(!res.ok)throw Error('HTTP '+res.status+' while posting response');
+      try{localStorage.setItem('w38_last_sent',String(Date.now()))}catch(e){}
+      status.textContent='✅ وصلت استجابتك للمراجعة. لن تُنشر للجميع إلا بعد اعتمادها من رائدات النشاط.';
+      form.reset();currentRole='طالبة';roleButtons.forEach(b=>{const on=b.dataset.role==='طالبة';b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});
+      await loadPublic();
+    }catch(e){status.textContent='تعذّر الإرسال؛ لا تعيدي كتابة المشاركة قبل التأكد من الاتصال. جربي لاحقًا، وإذا تكرر الخطأ راجعي إعدادات قاعدة البيانات.';console.error(e);}
+    finally{submitBtn.disabled=false;}
+  });
+  activityFilter.addEventListener('change',draw);
+  refreshBtn.addEventListener('click',loadPublic);
+  if(!configured)submitBtn.disabled=true;
+  loadPublic();
 })();
 </script></body></html>
