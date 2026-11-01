@@ -91,11 +91,7 @@ function submitSimple(n){let el=document.querySelector('.choice.selected');if(!e
   const replay=document.getElementById('gateReplay');
   const localInput=document.getElementById('gateAudioFile');
   // مصادر MP3 عامة للنشيد الوطني السعودي (عزف موسيقي)
-  const sources=[
-    'https://cdn.jsdelivr.net/gh/open-assets-hub/national-anthems@main/anthems/sa/anthem.mp3',
-    'https://raw.githubusercontent.com/open-assets-hub/national-anthems/main/anthems/sa/anthem.mp3',
-    'https://www.navyband.navy.mil/music/anthems/saudi-arabia.mp3'
-  ];
+const sources=['./national-anthem-vocals.mp3'];
   let sourceIndex=0, completed=false, localURL=null, localMode=false, sawStart=false;
   function say(message){info.textContent=message;}
   function reset(){completed=false;enter.disabled=true;enter.textContent='🔒 الدخول بعد انتهاء النشيد';bar.style.width='0%';}
