@@ -185,7 +185,7 @@ const sources=['./national-anthem-vocals.mp3'];
     const chosen=records.filter(r=>!sel || r.activity===sel);
     wall.replaceChildren();
     count.textContent=records.length.toLocaleString('ar-SA');
-    if(!chosen.length){wallStatus.textContent=records.length?'🇸🇦 لم تُنشر مشاركات بعد. كوني صاحبة البصمة الأولى في وطن مطمئن! ستظهر هنا المشاركات التي تجتاز الفحص الأولي، أو تُعتمد بعد المراجعة.':'لا توجد استجابات منشورة بعد. تظهر المشاركات هنا بعد اعتمادها من إدارة المبادرة.';return;}
+    if(!chosen.length){wallStatus.textContent=records.length?'لا توجد مشاركات منشورة لهذه الفعالية بعد.':'🇸🇦 لم تُنشر مشاركات بعد. كوني صاحبة البصمة الأولى في وطن مطمئن! ستظهر هنا المشاركات التي تجتاز الفحص الأولي، أو تُعتمد بعد المراجعة.';return;}
     wallStatus.textContent='🌟 '+chosen.length.toLocaleString('ar-SA')+' استجابة معتمدة — يمكن للجميع الاطلاع عليها.';
     for(const r of chosen){
       const card=document.createElement('article');card.className='wall-card';
