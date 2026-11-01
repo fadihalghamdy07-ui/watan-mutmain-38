@@ -224,7 +224,7 @@ const sources=['./national-anthem-vocals.mp3'];
       const res=await fetch(DB_URL+'/rest/v1/watan_responses',{method:'POST',headers:{...hdr(),'Prefer':'return=minimal'},body:JSON.stringify({role:currentRole,activity,category,message,approved:false})});
       if(!res.ok)throw Error('HTTP '+res.status+' while posting response');
       try{localStorage.setItem('w38_last_sent',String(Date.now()))}catch(e){}
-      status.textContent='✅ ✅ شكرًا لمشاركتك! تُنشر المشاركات التي تجتاز الفحص الأولي تلقائيًا، وتُحال بقية المشاركات للمراجعة..';
+      status.textContent='✅ شكرًا لمشاركتك في وطن مطمئن! 🇸🇦💚 بصمتك تصنع الأثر، ومساهمتك تعزز الوعي والانتماء. ستظهر مشاركتك للجميع إذا اجتازت الفحص الأولي، وإلا فستُحال للمراجعة.';
       form.reset();currentRole='طالبة';roleButtons.forEach(b=>{const on=b.dataset.role==='طالبة';b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on))});
       await loadPublic();
     }catch(e){status.textContent='تعذّر الإرسال؛ لا تعيدي كتابة المشاركة قبل التأكد من الاتصال. جربي لاحقًا، وإذا تكرر الخطأ راجعي إعدادات قاعدة البيانات.';console.error(e);}
