@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b4037"><title>لوحة إدارة وطن مطمئن 38 | الإدارة فقط</title>
+<style>
+:root{--green:#12483e;--deep:#092f29;--gold:#b88a45;--cream:#fffaf0;--ink:#173e35;--muted:#65746f;--border:#d8c59d}*{box-sizing:border-box}
+body{font-family:Tahoma,'Arial',sans-serif;background:#f4f4e9;color:var(--ink);margin:0;line-height:1.75}
+button,input,select{font:inherit}button{cursor:pointer}a{color:var(--green)}[hidden]{display:none!important}
+header{background:linear-gradient(110deg,#0b382f,#175f4d);color:white;padding:20px 18px;border-bottom:5px solid #d9b66b}
+header .wrap{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}h1{margin:0;font-size:clamp(20px,4vw,30px)}header p{margin:3px 0;color:#f0ddaa;font-size:13px}
+.wrap{max-width:1180px;margin:auto}.layout{padding:20px 15px 55px}.card{background:#fffdf6;border:1px solid #ded1b1;border-radius:18px;padding:19px;box-shadow:0 5px 18px #0a403112}.login{max-width:570px;margin:32px auto}
+label{display:block;font-weight:700;margin:14px 0 6px}.field{width:100%;padding:13px 12px;border:1px solid var(--border);border-radius:10px;background:white;color:var(--ink);font-size:16px}
+.btn{border:0;border-radius:11px;background:var(--green);color:white;font-weight:700;padding:11px 16px}.btn.gold{background:#bd984c;color:#152e29}.btn.alt{border:1px solid var(--gold);background:#fffdf5;color:var(--green)}.btn:disabled{opacity:.5}.btn:focus-visible,.field:focus-visible{outline:3px solid #e7c273}
+.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}.status{padding:10px 13px;margin:12px 0;border-radius:10px;background:#e8eee7;color:#235044;font-weight:700;white-space:pre-wrap}.tiny{font-size:12px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:17px}.stat{border-radius:15px;padding:17px;background:white;border:1px solid #e7d8b4;min-height:97px}.stat span{font-size:13px;color:#596e61}.stat strong{display:block;font-size:29px;color:#0e5646}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}.tabs button{background:#fffefa;border:1px solid var(--border);color:var(--green);padding:10px 14px;border-radius:12px;font-weight:700}.tabs button[aria-selected="true"]{background:var(--green);color:white}
+.dashboard{display:grid;grid-template-columns:minmax(260px,360px) minmax(0,1fr);gap:15px}.list{max-height:600px;overflow:auto;display:flex;flex-direction:column;gap:8px;padding-top:12px}.person{border:1px solid #e5d5b0;background:#fffef9;color:var(--green);text-align:right;padding:12px;border-radius:11px}.person[aria-current="true"]{border:2px solid #b69555;background:#f7f1db}.person strong{display:block}.person small{color:#64776e}
+.detail{min-height:260px}.detail h2,.card h2{margin:0 0 12px;font-size:21px}.info{display:flex;flex-wrap:wrap;gap:7px;margin:7px 0 16px}.chip{background:#e6eee9;color:#225347;border-radius:25px;padding:4px 10px;font-size:12px;font-weight:700}
+.question{background:#f9f8ee;border:1px solid #ece3cb;border-radius:13px;margin:10px 0;padding:12px}.question p{margin:0 0 8px;font-weight:700}.results{display:flex;gap:13px;flex-wrap:wrap}.results span{background:#e3ede4;border-radius:9px;padding:5px 9px;font-size:13px}
+.answer{padding:11px 12px;border-right:4px solid #c2a05a;background:#fcf8ed;border-radius:9px;margin:10px 0;overflow-wrap:anywhere;white-space:pre-wrap}.answer b{display:block;margin-bottom:3px}.empty{padding:20px;text-align:center;color:#65746f}.panel-title{border-bottom:1px solid #e4d5b6;padding-bottom:8px;margin-bottom:12px}
+@media(max-width:740px){.stats{grid-template-columns:repeat(2,1fr)}.dashboard{grid-template-columns:1fr}.list{max-height:260px}}
+@media print{.tabs,.actions,#authBlock,.listBox,header .btn{display:none!important}.dashboard{display:block}}
+</style></head><body>
+<header><div class="wrap"><div><h1>🇸🇦 لوحة إدارة «وطن مطمئن 38»</h1><p>المتوسطة الثامنة والثلاثون · حساب إداري فقط · لا تظهر أسماء المشاركات في المنصة العامة</p></div><a class="btn alt" href="./">العودة إلى منصة المشاركات</a></div></header>
+<main class="layout wrap">
+<section id="authBlock" class="card login"><h2>🔐 دخول الإدارة</h2><p>نسخة مخصصة لكِ لمتابعة المشاركات والاستبانات وإجابات كل مشاركة. الدخول يتطلب حسابًا معتمدًا، وليس مجرد معرفة الرابط.</p>
+<form id="loginForm"><label for="email">البريد الإلكتروني لحساب الإدارة</label><input class="field" id="email" type="email" autocomplete="username" required placeholder="name@example.com">
+<label for="password">كلمة مرور مخصصة لدخول الإدارة (٨ أحرف على الأقل)</label><input class="field" id="password" type="password" minlength="8" autocomplete="current-password" required>
+<div class="actions"><button class="btn" type="submit">دخول لوحة الإدارة</button><button class="btn alt" type="button" id="create">إنشاء حساب الإدارة لأول مرة</button></div></form>
+<p class="tiny">إنشاء الحساب وحده لا يمنح الوصول إلى بيانات المشاركات؛ يجب اعتماده. لا تكتبي كلمة مرورك في محادثة أو ترسليها لأحد.</p>
+<div id="authStatus" role="status" class="status">أدخلي البريد وكلمة المرور لحساب الإدارة.</div></section>
+<section id="pendingBlock" class="card login" hidden><h2>🛡️ الحساب بانتظار اعتماد الصلاحية</h2><p>تم تسجيل دخولك، لكن حسابك لم يُعتمد بعد للاطلاع على بيانات الطالبات.</p><p>انسخي <strong>معرّف حساب الإدارة</strong> فقط وأرسليه في المحادثة ليتم اعتماده في قاعدة البيانات. لا ترسلي كلمة المرور أو رموز الدخول.</p>
+<div class="status" id="pendingId"></div><div class="actions"><button class="btn" id="copyId" type="button">نسخ معرّف الحساب</button><button class="btn alt" id="retry" type="button">التحقق من الموافقة</button><button class="btn alt" id="logoutPending" type="button">تسجيل الخروج</button></div><p id="pendingStatus" class="tiny" role="status"></p></section>
+<section id="panel" hidden>
+<div class="actions" style="align-items:center;justify-content:space-between;margin-top:0;margin-bottom:18px"><p id="ownerEmail" class="tiny"></p><div class="actions" style="margin:0"><button id="refresh" class="btn gold" type="button">⟳ تحديث النتائج</button><button id="logout" class="btn alt" type="button">تسجيل الخروج</button></div></div>
+<div class="stats" id="stats"></div><nav class="tabs" aria-label="أقسام لوحة المتابعة"><button type="button" data-tab="participants" aria-selected="true">المشاركات والإجابات</button><button type="button" data-tab="surveys" aria-selected="false">معاينة الاستبانتين</button><button type="button" data-tab="effect" aria-selected="false">قياس الأثر</button></nav>
+<div id="participantsTab" class="dashboard"><div class="card listBox"><h2>أسماء المشاركات</h2><input id="find" class="field" type="search" placeholder="البحث بالاسم" aria-label="البحث بالاسم"><select id="role" class="field" style="margin-top:10px"><option value="">جميع الصفات</option><option>طالبة</option><option>معلمة</option><option>إدارية</option><option>ولي أمر</option></select><div id="people" class="list"></div></div><article id="details" class="card detail"><div class="empty">اختاري مشاركة لعرض الاستبانتين وجميع إجاباتها في الفعاليات الست.</div></article></div>
+<section id="surveysTab" class="card" hidden><h2>📝 الاستبانة القبلية والبعدية</h2><p>المقياس نفسه قبل الفعاليات وبعدها، خمس عبارات بدرجات من ١ إلى ٥. هذه معاينة للأسئلة، ولا تحفظ إجابات.</p><div id="surveyPreview"></div></section>
+<section id="effectTab" class="card" hidden><h2>📊 قياس الأثر الفعلي</h2><p>الدرجات التالية محسوبة فقط من الاستبانات المحفوظة. تظهر مقارنة القبلي والبعدي عندما تكون الاثنتان موجودتين.</p><div id="effectContent"></div></section>
+<div id="loadStatus" class="status" role="status" style="margin-top:16px">سيتم تحديث البيانات عند فتح اللوحة، ثم كل ٣٠ ثانية أثناء وجود الصفحة أمامك.</div>
+</section></main>
+<script>
+'use strict';
+(() => {
+ const BASE='https://ddlkaqpbogrolwuvntbb.supabase.co';
+ const KEY='sb_publishable_FVo2S3pdcg8gZRnY1WJkJg_LSi3G0mD';
+ const QUESTIONS=['أتحقق من صحة الأخبار والمعلومات قبل مشاركتها.','أعرف كيف أتعامل مع الرسائل والروابط الإلكترونية المشبوهة.','أحترم الآخرين وأساهم في الحوار الإيجابي داخل المدرسة والمجتمع.','أحرص على المشاركة في الأعمال والمبادرات التي تخدم المجتمع.','أتصرف بمسؤولية للمحافظة على أمن الوطن ومكتسباته.'];
+ const OPTIONS=['لا أوافق إطلاقًا','لا أوافق','محايدة','أوافق','أوافق بشدة'];
+ const $=id=>document.getElementById(id);
+ let session=null, user=null, authorized=false, current=null, overview=[], answers=[], entries=[];
+ function say(id,message){$(id).textContent=message;}
+ function show(which){['authBlock','pendingBlock','panel'].forEach(id=>$(id).hidden=id!==which);}
+ async function request(path,options={}){
+   const headers={'apikey':KEY,'Content-Type':'application/json',...(options.headers||{})};
+   if(options.authorize&&session?.access_token)headers.Authorization='Bearer '+session.access_token;
+   const res=await fetch(BASE+path,{...options,headers,cache:'no-store'});
+   const body=await res.json().catch(()=>({}));
+   if(!res.ok)throw new Error(String(body.msg||body.message||body.error_description||body.error||`HTTP ${res.status}`));
+   return body;
+ }
+ function saveSession(data){session=data;sessionStorage.setItem('w38_owner_session',JSON.stringify(session));}
+ function clearSession(){session=null;user=null;authorized=false;sessionStorage.removeItem('w38_owner_session');show('authBlock');say('authStatus','تم تسجيل الخروج.');}
+ async function authUser(){user=await request('/auth/v1/user',{authorize:true});return user;}
+ async function ensureToken(){if(!session)throw new Error('يلزم تسجيل الدخول');
+   if(session.expires_at && (Date.now()/1000)>Number(session.expires_at)-90){
+     if(!session.refresh_token)throw new Error('انتهت الجلسة، سجّلي الدخول من جديد.');
+     const fresh=await request('/auth/v1/token?grant_type=refresh_token',{method:'POST',body:JSON.stringify({refresh_token:session.refresh_token})});saveSession(fresh);
+   }
+ }
+ async function rest(table,query='?select=*'){await ensureToken();return request('/rest/v1/'+table+query,{authorize:true});}
+ async function enterPanel(){
+   await ensureToken();await authUser();
+   const state=await rest('w38_admin_access_status','?select=approved');
+   if(!state[0]?.approved){authorized=false;show('pendingBlock');say('pendingId',user.id);return;}
+   authorized=true;show('panel');say('ownerEmail','حساب الإدارة: '+(user.email||''));await load();
+ }
+ $('loginForm').addEventListener('submit',async e=>{e.preventDefault();say('authStatus','جارٍ تسجيل الدخول…');
+   try{const data=await request('/auth/v1/token?grant_type=password',{method:'POST',body:JSON.stringify({email:$('email').value.trim(),password:$('password').value})});saveSession(data);$('password').value='';await enterPanel();}
+   catch(err){say('authStatus','تعذر الدخول: '+err.message);} });
+ $('create').addEventListener('click',async()=>{
+   const email=$('email').value.trim(),password=$('password').value;
+   if(!$('loginForm').reportValidity())return;
+   say('authStatus','جارٍ إنشاء حساب إدارة جديد…');
+   try{const data=await request('/auth/v1/signup',{method:'POST',body:JSON.stringify({email,password})});$('password').value='';
+     if(data.access_token){saveSession(data);await enterPanel();}else say('authStatus','تم طلب إنشاء الحساب. راجعي رسالة التأكيد في بريدك أولًا، ثم ارجعي وسجّلي الدخول. بعد ذلك يلزم اعتماد صلاحية الإدارة.');
+   }catch(err){say('authStatus','تعذّر إنشاء الحساب: '+err.message);} });
+ $('copyId').onclick=async()=>{try{await navigator.clipboard.writeText(user.id);say('pendingStatus','تم نسخ المعرّف، أرسليه فقط لاعتماد الحساب.');}catch{say('pendingStatus','انسخي المعرّف الظاهر بالأعلى يدويًا.');}};
+ $('retry').onclick=async()=>{say('pendingStatus','جارٍ التحقق…');try{await enterPanel();if(!authorized)say('pendingStatus','لم تتم الموافقة على هذا الحساب بعد.');}catch(err){say('pendingStatus',err.message);}};
+ $('logout').onclick=$('logoutPending').onclick=clearSession;
+ $('refresh').onclick=()=>load();
+ const fields=['participants','surveys','effect'];
+ document.querySelectorAll('[data-tab]').forEach(button=>button.onclick=()=>{for(const t of fields){$(t+'Tab').hidden=t!==button.dataset.tab;document.querySelector(`[data-tab="${t}"]`).setAttribute('aria-selected',String(t===button.dataset.tab));}});
+ function node(tag,text,className){const n=document.createElement(tag);if(text!==undefined)n.textContent=String(text);if(className)n.className=className;return n;}
+ function add(parent,tag,text,className){const n=node(tag,text,className);parent.append(n);return n;}
+ function chip(parent,text){return add(parent,'span',text,'chip');}
+ function value(n){return n===null||n===undefined?'—':String(n)+'/5 ('+OPTIONS[Number(n)-1]+')';}
+ function fmt(date){return date?new Date(date).toLocaleString('ar-SA',{dateStyle:'short',timeStyle:'short'}):'—';}
+ function stat(label,num){const c=node('div',undefined,'stat');add(c,'span',label);add(c,'strong',num);$('stats').append(c);}
+ function renderStats(){const post=overview.filter(x=>x.after_submitted_at).length;const final=overview.filter(x=>x.final_submitted).length;
+   $('stats').replaceChildren();stat('المشاركات المسجلات',overview.length);stat('بصمات وطن المحفوظة',overview.filter(x=>x.has_national_fingerprint).length);stat('الاستبانات البعدية',post);stat('التسليم النهائي',final);
+ }
+ function filterPeople(){const search=$('find').value.trim(),role=$('role').value;const list=overview.filter(x=>(!role||x.participant_role===role)&&(!search||x.participant_name.includes(search)));
+  $('people').replaceChildren();if(!list.length){add($('people'),'div','لا توجد مشاركات مطابقة.','empty');return;}
+  for(const p of list){const b=node('button',undefined,'person');b.type='button';b.setAttribute('aria-current',String(p.participant_id===current));
+   add(b,'strong',p.participant_name);add(b,'small',p.participant_role+' · '+fmt(p.started_at));add(b,'small',' · فعاليات '+p.completed_activities_of_6+'/6');
+   b.onclick=()=>{current=p.participant_id;filterPeople();renderDetails();};$('people').append(b);
+  }
+ }
+ $('find').addEventListener('input',filterPeople);$('role').addEventListener('change',filterPeople);
+ function renderDetails(){const detail=$('details'),p=overview.find(x=>x.participant_id===current);detail.replaceChildren();if(!p){add(detail,'p','اختاري مشاركة لعرض إجاباتها.','empty');return;}
+  add(detail,'h2','👤 '+p.participant_name);const info=add(detail,'div',undefined,'info');chip(info,p.participant_role);chip(info,'القبلي: '+p.before_score_25+'/25');chip(info,'البعدي: '+(p.after_score_25===null?'لم يُرسل':p.after_score_25+'/25'));chip(info,'الفعاليات: '+p.completed_activities_of_6+'/6');chip(info,p.final_submitted?'✅ سلّمت':'لم يتم التسليم النهائي');
+  const a=answers.find(x=>x.participant_id===current);
+  add(detail,'h3','إجابات الاستبانتين','panel-title');if(!a){add(detail,'p','لا توجد إجابات محفوظة لهذا الحساب.');}else QUESTIONS.forEach((q,i)=>{const box=add(detail,'div',undefined,'question');add(box,'p',(i+1)+'. '+q);const d=add(box,'div',undefined,'results');add(d,'span','قبلي: '+value(a['before_q'+(i+1)]));add(d,'span','بعدي: '+value(a['after_q'+(i+1)]));});
+  add(detail,'h3','بصمة وطن وإجابات الفعاليات','panel-title');const own=entries.filter(e=>e.participant_id===current);if(!own.length)add(detail,'p','لا توجد بصمة أو فعالية محفوظة بعد.','empty');
+  for(const e of own){const block=add(detail,'div',undefined,'answer');add(block,'b',e.activity+' · '+fmt(e.created_at));add(block,'span',e.message);}
+ }
+ function renderQuestions(){const root=$('surveyPreview');root.replaceChildren();for(const kind of ['الاستبانة القبلية','الاستبانة البعدية']){const h=add(root,'h3',kind,'panel-title');h.style.marginTop='18px';QUESTIONS.forEach((q,i)=>{const box=add(root,'div',undefined,'question');add(box,'p',(i+1)+'. '+q);add(box,'small',OPTIONS.join('  |  '),'tiny');});}}
+ function renderEffect(){const root=$('effectContent');root.replaceChildren();const matched=overview.filter(x=>x.after_score_25!==null);
+   if(!matched.length){add(root,'p','لم تُحفظ أي استبانة بعدية حتى الآن؛ لذلك لا يمكن حساب فرق الأثر الحقيقي.','empty');return;}
+   const a=matched.reduce((v,x)=>v+Number(x.before_score_25),0)/matched.length;const b=matched.reduce((v,x)=>v+Number(x.after_score_25),0)/matched.length;
+   add(root,'h3',`متوسط القياس القبلي ${a.toFixed(1)} /25 — البعدي ${b.toFixed(1)} /25`);
+   add(root,'p','الفرق في المتوسط: '+(b-a).toFixed(1)+' نقطة · عدد المشاركات ذوات القياسين: '+matched.length);
+   matched.forEach(p=>{const row=add(root,'div',undefined,'answer');add(row,'b',p.participant_name+' — '+p.participant_role);add(row,'span','قبلي: '+p.before_score_25+'/25 · بعدي: '+p.after_score_25+'/25 · الفرق: '+(Number(p.after_score_25)-Number(p.before_score_25)));});
+ }
+ async function load(){if(!authorized)return;say('loadStatus','جارٍ تحميل آخر النتائج المحفوظة…');
+   try{const [o,a,e]=await Promise.all([rest('w38_admin_live_overview','?select=*&order=started_at.desc&limit=1000'),rest('w38_admin_survey_answers','?select=*&order=created_at.desc&limit=1000'),rest('w38_admin_entries_by_person','?select=*&order=created_at.desc&limit=1000')]);
+    overview=o;answers=a;entries=e;current=current&&overview.some(x=>x.participant_id===current)?current:overview[0]?.participant_id;
+    renderStats();filterPeople();renderDetails();renderEffect();say('loadStatus','✅ تم تحديث السجلات: '+fmt(new Date().toISOString())+' — يُعرض أحدث ١٠٠٠ سجل كحد أقصى لكل قسم.');
+   }catch(err){say('loadStatus','تعذر تحميل البيانات: '+err.message+' — تحققي من اعتماد حساب الإدارة وصلاحياته.');}
+ }
+ renderQuestions();
+ setInterval(()=>{if(authorized&&!document.hidden)load().catch(()=>{});},30000);
+ try{const raw=sessionStorage.getItem('w38_owner_session');if(raw){session=JSON.parse(raw);enterPanel().catch(()=>{clearSession();say('authStatus','انتهت جلسة الإدارة؛ سجّلي الدخول مرة أخرى.');});}}catch{clearSession();}
+})();
+</script></body></html>
