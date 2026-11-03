@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#073d34">
+  <meta name="robots" content="noindex,nofollow">
+  <title>لوحة العرض العامة | وطن مطمئن 38</title>
+  <style>
+    :root{--forest:#083e35;--pine:#125b4a;--gold:#dbbd7e;--cream:#f7f5ee;--paper:#fffdf8;--ink:#194c40;--muted:#6a7b71;--border:#e6dcc4}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:#f3f5f0;font-family:Tahoma,Arial,sans-serif;line-height:1.7}
+    .container{max-width:1180px;margin:auto;padding-left:19px;padding-right:19px}button{font:inherit;cursor:pointer}a{color:inherit}
+    .hero{background:radial-gradient(ellipse at 25% -20%,#297961 0%,transparent 57%),linear-gradient(125deg,#052a26,#125744 72%,#083e35);color:#fffaf0;border-bottom:6px solid var(--gold)}
+    .hero-bar{padding:19px 0;display:flex;gap:12px;justify-content:space-between;align-items:center;border-bottom:1px solid #e3d1aa4b;flex-wrap:wrap}.brand{display:flex;gap:12px;align-items:center;font-weight:900}.brand-icon{font-size:27px;padding:6px 11px;border:1px solid #d9bf8a8a;border-radius:13px;background:#ffffff13}.brand strong{font-size:19px}.brand small{font-size:12px;color:#e4d09b}.public-tag{border:1px solid #c6dacf59;background:#ffffff1c;border-radius:100px;font-size:12px;padding:6px 11px;color:#e9ead5}
+    .hero-content{padding:42px 0 50px}.kicker{font-size:13px;color:#efd79d;font-weight:700}.hero h1{font-size:clamp(29px,5vw,46px);line-height:1.4;margin:8px 0 11px}.hero p{max-width:670px;color:#dae9e0;font-size:15px;margin:0}.motto{color:#e4c986;font-weight:700;font-size:13px;margin-top:18px}
+    main{padding-top:26px;padding-bottom:58px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:0 0 17px}.toolbar .timestamp{font-size:12px;color:var(--muted)}.toolbar-title{font-size:14px;font-weight:700;color:#244d42}.refresh{border:0;background:#0c4d3e;color:white;border-radius:12px;padding:10px 17px;font-weight:700}.refresh:disabled{opacity:.5}button:focus-visible,a:focus-visible{outline:3px solid #d4ad62;outline-offset:3px}
+    .status{padding:11px 15px;border-radius:12px;background:#fff1e7;border:1px solid #e6c3aa;color:#91452d;margin:0 0 18px;font-size:13px}.status[hidden]{display:none}
+    .summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.stat{background:var(--paper);border:1px solid var(--border);padding:20px;border-radius:21px;min-height:154px;box-shadow:0 8px 20px #204c3610}.stat .stat-icon{font-size:25px;margin-bottom:2px}.stat .label{font-size:13px;color:#6a766e;font-weight:700}.stat strong{display:block;font-size:39px;line-height:1.5;color:#145440;font-weight:900;font-variant-numeric:tabular-nums}.stat .help{font-size:11px;color:#72847c}.stat.highlight{background:linear-gradient(125deg,#0c4c3d,#1c6b53);border-color:#2c8568;color:#fff}.stat.highlight strong{color:#f6d99a}.stat.highlight .label,.stat.highlight .help{color:#e0eee7}
+    .section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:34px 0 15px;padding-right:12px;border-right:4px solid var(--gold)}.section-title h2{font-size:20px;margin:0}.section-title span{font-size:12px;color:var(--muted)}
+    .columns{display:grid;grid-template-columns:1.05fr .95fr;gap:17px}.panel{background:var(--paper);border:1px solid var(--border);border-radius:21px;padding:23px;min-width:0;box-shadow:0 7px 18px #204c3611}.panel h3{margin:0;font-size:19px}.panel .desc{font-size:12px;color:#68796f;margin:7px 0 22px}
+    .activity{margin-bottom:19px}.activity:last-child{margin-bottom:0}.activity-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:7px;font-size:13px}.activity-head strong{font-size:13px}.activity-count{font-weight:700;white-space:nowrap;color:var(--pine)}.track{height:10px;background:#e9eee5;border-radius:99px;overflow:hidden}.track-fill{width:0;height:100%;background:linear-gradient(90deg,#d8b777,#176e54);border-radius:99px;transition:width .4s ease}
+    .metric{display:flex;justify-content:space-between;gap:10px;align-items:center;background:#faf7ee;border:1px solid #e8ddbe;border-radius:14px;padding:13px 14px;margin:10px 0}.metric .metric-name{font-size:13px;color:#506b5e}.metric .metric-name small{display:block;font-size:11px;color:#77867e}.metric .value{font-size:21px;font-weight:900;color:#14523f;white-space:nowrap}.note{background:#eaf1e9;border:1px solid #d7e6d8;border-radius:14px;padding:15px;color:#4d6d5b;font-size:12px;margin-top:16px}
+    .privacy{background:#edece3;border:1px solid #d9d6c6;border-radius:18px;display:flex;gap:13px;align-items:flex-start;padding:20px;margin-top:25px}.privacy .lock{font-size:28px}.privacy strong{font-size:14px}.privacy p{font-size:12px;margin:5px 0 0;color:#5e7065}
+    footer{text-align:center;background:#062d26;color:#dbe9dc;padding:27px 18px;font-size:12px}footer strong{color:#e9ce92}footer a{text-decoration:underline;text-underline-offset:3px}
+    @media(max-width:820px){.columns{grid-template-columns:1fr}}@media(max-width:600px){.container{padding-left:14px;padding-right:14px}.hero-content{padding:34px 0 41px}.hero h1{font-size:29px}.summary{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stat{padding:15px;min-height:143px}.stat strong{font-size:33px}.stat .label{font-size:12px}.panel{padding:17px}.section-title h2{font-size:18px}.public-tag{font-size:11px}}
+    @media(prefers-reduced-motion:reduce){.track-fill{transition:none}html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<header class="hero">
+ <div class="container">
+  <div class="hero-bar"><div class="brand"><span class="brand-icon">🇸🇦</span><div><strong>وطن مطمئن | 38</strong><div><small>المتوسطة الثامنة والثلاثون — إدارة تعليم تبوك</small></div></div></div><span class="public-tag">لوحة العرض العامة — بدون تسجيل دخول</span></div>
+  <div class="hero-content"><div class="kicker">متابعة المبادرة المدرسية</div><h1>مؤشرات مبادرة «وطن مطمئن»</h1><p>لوحة تفاعلية لعرض حجم المشاركة والفعاليات الست ونتائج قياس الأثر من السجلات المحفوظة، دون إظهار أي معلومات شخصية.</p><div class="motto">وعي يحمي، وانتماء يبني</div></div>
+ </div>
+</header>
+<main class="container">
+ <div class="toolbar"><div><div class="toolbar-title">ملخص التنفيذ والمتابعة</div><div id="updated" class="timestamp" aria-live="polite">جارٍ تحميل أحدث الإحصائيات…</div></div><button type="button" id="refresh" class="refresh">↻ تحديث النتائج</button></div>
+ <p id="status" class="status" role="status" hidden></p>
+ <div class="summary" aria-label="مؤشرات المشاركة">
+  <article class="stat highlight"><div class="stat-icon">👥</div><div class="label">المشاركات المسجلات</div><strong id="participants">—</strong><div class="help">الاستبانات القبلية المحفوظة</div></article>
+  <article class="stat"><div class="stat-icon">✦</div><div class="label">بصمات وطن</div><strong id="pledges">—</strong><div class="help">مشاركات حفظن بصمتهن الوطنية</div></article>
+  <article class="stat"><div class="stat-icon">🧩</div><div class="label">مشاركات في الفعاليات</div><strong id="engaged_participants">—</strong><div class="help">أكملن فعالية واحدة على الأقل</div></article>
+  <article class="stat"><div class="stat-icon">✅</div><div class="label">الأنشطة المكتملة</div><strong id="completed_activity_records">—</strong><div class="help">مجموع الفعاليات المسجلة</div></article>
+  <article class="stat"><div class="stat-icon">📋</div><div class="label">الاستبانات البعدية</div><strong id="post_surveys">—</strong><div class="help">استبانات بُعدية محفوظة</div></article>
+  <article class="stat"><div class="stat-icon">🏅</div><div class="label">التسليمات النهائية</div><strong id="final_submissions">—</strong><div class="help">رحلات مكتملة تم تسليمها</div></article>
+ </div>
+ <div class="section-title"><h2>الفعاليات وقياس الأثر</h2><span>نتائج فعلية مجمعة</span></div>
+ <div class="columns">
+  <section class="panel"><h3>الفعاليات الوطنية الست</h3><p class="desc">عدد المشاركات اللاتي حفظن كل فعالية، مقارنة بإجمالي المسجلات في القياس القبلي.</p>
+   <div class="activity"><div class="activity-head"><strong>١. سفير الطمأنينة</strong><span class="activity-count" id="count1">—</span></div><div class="track"><div class="track-fill" id="bar1"></div></div></div>
+   <div class="activity"><div class="activity-head"><strong>٢. رسالة اطمئنان</strong><span class="activity-count" id="count2">—</span></div><div class="track"><div class="track-fill" id="bar2"></div></div></div>
+   <div class="activity"><div class="activity-head"><strong>٣. مختبر الوعي الرقمي</strong><span class="activity-count" id="count3">—</span></div><div class="track"><div class="track-fill" id="bar3"></div></div></div>
+   <div class="activity"><div class="activity-head"><strong>٤. مجلس وطن مطمئن</strong><span class="activity-count" id="count4">—</span></div><div class="track"><div class="track-fill" id="bar4"></div></div></div>
+   <div class="activity"><div class="activity-head"><strong>٥. الطمأنينة فعل</strong><span class="activity-count" id="count5">—</span></div><div class="track"><div class="track-fill" id="bar5"></div></div></div>
+   <div class="activity"><div class="activity-head"><strong>٦. نبض الطمأنينة المجتمعي</strong><span class="activity-count" id="count6">—</span></div><div class="track"><div class="track-fill" id="bar6"></div></div></div>
+  </section>
+  <section class="panel"><h3>قياس الأثر التعليمي</h3><p class="desc">النتائج من ٢٥ درجة. للمقارنة العادلة تُحسب درجات القبلي والبعدي للمجموعة نفسها فقط.</p>
+   <div class="metric"><div class="metric-name">متوسط القياس القبلي<small>الاستبانات القبلية المتاحة</small></div><strong class="value" id="preall">—</strong></div>
+   <div class="metric"><div class="metric-name">القياس القبلي للمكتملات<small>لمن لديهن قبلي وبعدي</small></div><strong class="value" id="prepaired">—</strong></div>
+   <div class="metric"><div class="metric-name">القياس البعدي للمكتملات<small>للمجموعة نفسها</small></div><strong class="value" id="postpaired">—</strong></div>
+   <div class="note" id="comparison">تظهر مقارنة قياس الأثر بعد تسجيل خمس استبانات بعدية مكتملة على الأقل؛ حفاظًا على خصوصية المشاركات.</div>
+  </section>
+ </div>
+ <section class="privacy"><div class="lock">🛡️</div><div><strong>بيانات المشاركات محمية</strong><p>هذا رابط عام لا يتطلب حسابًا أو رمزًا. لذلك يعرض أعدادًا ومتوسطات ونتائج مجمعة فقط، ولا يعرض أسماء الطالبات أو إجابات الاستبانات الفردية أو نصوص بصماتهن. الاطلاع على التفاصيل متاح من لوحة إدارة المدرسة المحمية.</p></div></section>
+</main>
+<footer><strong>منصة وطن مطمئن 38</strong><div>المتوسطة الثامنة والثلاثون · إدارة تعليم تبوك</div><div><a href="./">العودة إلى منصة المشاركات</a></div></footer>
+<script>
+(function(){
+ 'use strict';
+ const url='https://ddlkaqpbogrolwuvntbb.supabase.co/rest/v1/w38_public_supervisor_stats?select=*&id=eq.1';
+ const key='sb_publishable_FVo2S3pdcg8gZRnY1WJkJg_LSi3G0mD';
+ const el=id=>document.getElementById(id);
+ const locale=new Intl.NumberFormat('ar-SA',{maximumFractionDigits:1});
+ const safeNum=value=>Number.isFinite(Number(value))?Number(value):0;
+ const num=value=>locale.format(safeNum(value));
+ let busy=false;
+ function score(id,value){el(id).textContent=value===null||value===undefined?'بانتظار البيانات':num(value)+' / ٢٥';}
+ async function refresh(){
+  if(busy)return;busy=true;el('refresh').disabled=true;el('status').hidden=true;
+  try{
+   const response=await fetch(url,{method:'GET',headers:{'apikey':key,'Accept':'application/json'},cache:'no-store'});
+   if(!response.ok)throw new Error('خطأ في جلب البيانات ('+response.status+')');
+   const items=await response.json();if(!Array.isArray(items)||!items.length)throw new Error('لا تتوفر نتائج محفوظة الآن.');
+   const d=items[0];
+   for(const id of ['participants','pledges','engaged_participants','completed_activity_records','post_surveys','final_submissions'])el(id).textContent=num(d[id]);
+   const total=Math.max(1,safeNum(d.participants));
+   for(let i=1;i<=6;i++){const n=safeNum(d['activity'+i]);el('count'+i).textContent=num(n)+' مشاركة';el('bar'+i).style.width=Math.min(100,Math.max(0,100*n/total))+'%';}
+   score('preall',d.average_pre_score);score('prepaired',d.average_paired_pre_score);score('postpaired',d.average_paired_post_score);
+   const a=d.average_paired_pre_score,b=d.average_paired_post_score;
+   if(a!==null&&a!==undefined&&b!==null&&b!==undefined){const delta=safeNum(b)-safeNum(a);const dir=delta>0?'ارتفع':delta<0?'انخفض':'ثبت';el('comparison').textContent='متوسط القياس البعدي '+dir+' بمقدار '+num(Math.abs(delta))+' درجة مقارنةً بالقبلي للمشاركات المكتملات، دون الكشف عن الإجابات الفردية.';}
+   else el('comparison').textContent='ستظهر مقارنة القياس القبلي والبعدي عند توفر خمس مشاركات أكملن الاستبانتين على الأقل؛ حفاظًا على خصوصية البيانات.';
+   const date=d.updated_at?new Date(d.updated_at):new Date();
+   el('updated').textContent='آخر تحديث للبيانات: '+new Intl.DateTimeFormat('ar-SA',{timeZone:'Asia/Riyadh',dateStyle:'medium',timeStyle:'short'}).format(date)+' · تحديث تلقائي كل دقيقة';
+  }catch(err){el('status').hidden=false;el('status').textContent='تعذر عرض الأرقام الآن: '+(err instanceof Error?err.message:'تحققي من الاتصال بالإنترنت')+'. اضغطي «تحديث النتائج» للمحاولة مجددًا.';el('updated').textContent='تعذر التحديث.';}
+  finally{busy=false;el('refresh').disabled=false;}
+ }
+ el('refresh').addEventListener('click',refresh);
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});
+ setInterval(()=>{if(!document.hidden)refresh();},60000);
+ refresh();
+})();
+</script>
+</body>
+</html>
